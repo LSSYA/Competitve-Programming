@@ -57,4 +57,5 @@ void selectionSort(int arr[], int n)
                     arr[j]=temp;
                 }
             }
-}}
+}
+}
