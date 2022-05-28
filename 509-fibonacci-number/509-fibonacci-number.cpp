@@ -2,21 +2,19 @@ class Solution {
 public:
     int fib(int n) {
         
-        if( n < 1)
+     vector<int> stack(n+1);
+        if( n == 0 )
         {
             return 0;
         }
         
-        int first = 0;
-        int second = 1;
+        stack[1] = 1;
         
-        for( int i =2; i<=n; i++)
+        for(int i=2; i<=n; i++)
         {
-            int temp = second;
-            second += first;
-            first = temp;
+            stack[i] = stack[i-1] + stack[i-2];
         }
         
-        return second;    
+        return stack[n];
     }
 };
